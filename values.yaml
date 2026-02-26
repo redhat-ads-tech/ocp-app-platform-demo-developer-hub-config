@@ -9,3 +9,8 @@ argocd:
 
 kubernetes:
   apiUrl: ""
+
+keycloak:
+  host: ""
+  realm: backstage
+  loginRealm: backstage
