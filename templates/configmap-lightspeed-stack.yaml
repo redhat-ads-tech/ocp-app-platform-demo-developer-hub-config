@@ -30,4 +30,4 @@ data:
     mcp_servers:
     - name: mcp::backstage
       provider_id: model-context-protocol
-      url: https://backstage-developer-hub.rhdh.svc.cluster.local/api/mcp-actions/v1
+      url: http://backstage-developer-hub.rhdh.svc.cluster.local/api/mcp-actions/v1
