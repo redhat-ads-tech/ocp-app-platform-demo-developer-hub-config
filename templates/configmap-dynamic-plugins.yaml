@@ -102,10 +102,10 @@ data:
                     importName: SupportButton
                     config:
                       priority: 80
-                  - mountPoint: global.header/component
-                    importName: NotificationButton
-                    config:
-                      priority: 70
+                  # - mountPoint: global.header/component
+                  #   importName: NotificationButton
+                  #   config:
+                  #     priority: 70
                   - mountPoint: global.header/component
                     importName: Divider
                     config:
