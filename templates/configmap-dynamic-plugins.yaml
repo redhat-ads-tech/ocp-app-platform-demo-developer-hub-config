@@ -164,7 +164,7 @@ data:
                       priority: 120
                       props:
                         title: OpenShift Pipelines
-                        icon: openShift
+                        icon: https://connect.redhat.com/sites/default/files/2022-08/product_icon-red_hat-openshift-pipelines-rgb.png
                         link: https://docs.redhat.com/en/documentation/red_hat_openshift_pipelines/1.21
                   - mountPoint: global.header/application-launcher
                     importName: MenuItemLink
