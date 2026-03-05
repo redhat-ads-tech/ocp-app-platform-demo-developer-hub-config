@@ -193,3 +193,20 @@ data:
                         title: GitLab
                         icon: gitlab
                         link: https://gitlab-gitlab.{{ .Values.cluster.subdomain }}
+      {{- if .Values.devMode }}
+      # Dev-only plugins
+      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/proberaum-backstage-plugin-icon-viewer:next__0.1.2!proberaum-backstage-plugin-icon-viewer
+        disabled: false
+        pluginConfig:
+          dynamicPlugins:
+            frontend:
+              proberaum.backstage-plugin-icon-viewer:
+                translationResources:
+                  - importName: iconViewerTranslations
+                    ref: iconViewerTranslationRef
+                dynamicRoutes:
+                  - importName: IconViewerPage
+                    path: /icon-viewer
+                    menuItem:
+                      text: Icon viewer
+      {{- end }}

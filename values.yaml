@@ -17,3 +17,5 @@ keycloak:
 
 cluster:
   subdomain: ""
+
+devMode: false
