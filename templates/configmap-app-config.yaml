@@ -69,7 +69,8 @@ data:
         - "data:"
         - https://img.freepik.com
         - https://cdn.dribbble.com
-        - https://avatars.githubusercontent.com # This is to load GitHub avatars in the UI
+        - https://avatars.githubusercontent.com
+        - https://api.dicebear.com
       script-src:
         - "'self'"
         - "'unsafe-eval'"
