@@ -37,7 +37,7 @@ data:
       providers:
         oidc:
           production:
-            prompt: auto
+            prompt: login
             metadataUrl: https://{{ .Values.keycloak.host }}/realms/{{ .Values.keycloak.realm }}/.well-known/openid-configuration
             clientId: ${OAUTH_CLIENT_ID}
             clientSecret: ${OAUTH_CLIENT_SECRET}
