@@ -180,3 +180,8 @@ data:
         - group: route.openshift.io
           apiVersion: v1
           plural: routes
+
+    sonarqube:
+      baseUrl: https://{{ .Values.sonarqube.host }}
+      apiKey: ${SONARQUBE_API_KEY}
+      authType: Bearer
