@@ -123,6 +123,10 @@ data:
               username: admin
               password: ${ARGOCD_PASSWORD}
 
+    jira:
+      proxyPath: /jira/api
+      product: datacenter
+
     proxy:
       endpoints:
         '/jira/api':
@@ -131,6 +135,7 @@ data:
             Accept: application/json
             Content-Type: application/json
             X-Atlassian-Token: nocheck
+          allowedMethods: ['GET', 'POST']
 
     kubernetes:
       serviceLocatorMethod:
