@@ -272,8 +272,8 @@ data:
                     importName: EntityJiraOverviewCard
                     config:
                       layout:
-                        gridColumnEnd: span 4
-      
+                        gridColumn: 1 / -1
+
       # Jira plugin (backend data source for Scorecards)
       - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira:bs_1.42.5__1.0.1!red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira
         disabled: false
