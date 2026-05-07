@@ -248,12 +248,8 @@ data:
           dynamicPlugins:
             frontend:
               red-hat-developer-hub.backstage-plugin-scorecard:
-                entityTabs:
-                  - path: '/scorecard'
-                    title: Scorecard
-                    mountPoint: entity.page.scorecard
                 mountPoints:
-                  - mountPoint: entity.page.scorecard/cards
+                  - mountPoint: entity.page.overview/cards
                     importName: EntityScorecardContent
                     config:
                       layout:
@@ -278,11 +274,8 @@ data:
       #                 layout:
       #                   gridColumnEnd: span 4
       
-      # Jira plugin (backend data source for Scorecards) (1.8 plugin...)
-      # package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira:bs_1.42.5__1.0.1!red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira
+      # Jira plugin (backend data source for Scorecards)
       - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira:bs_1.42.5__1.0.1!red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira
-      # 1.9 plugin...
-      # - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira:bs_1.45.3__2.3.5
         disabled: false
 
       {{- if .Values.devMode }}
