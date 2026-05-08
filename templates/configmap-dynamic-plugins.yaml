@@ -278,6 +278,27 @@ data:
       - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira:bs_1.42.5__1.0.1!red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira
         disabled: false
 
+      # Quay plugin
+      - package: ./dynamic-plugins/dist/backstage-community-plugin-quay
+        disabled: false
+        pluginConfig:
+          dynamicPlugins:
+            frontend:
+              backstage-community.plugin-quay:
+                mountPoints:
+                  - mountPoint: entity.page.image-registry/cards
+                    importName: QuayPage
+                    config:
+                      layout:
+                        gridColumn: 1 / -1
+                    if:
+                      allOf:
+                        - isKind: component
+                entityTabs:
+                  - path: /image-registry
+                    title: Image Registry
+                    mountPoint: entity.page.image-registry
+
       {{- if .Values.devMode }}
       # Dev-only plugins
       - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/proberaum-backstage-plugin-icon-viewer:next__0.1.2!proberaum-backstage-plugin-icon-viewer

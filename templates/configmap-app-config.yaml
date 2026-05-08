@@ -127,6 +127,9 @@ data:
       proxyPath: /jira/api
       product: datacenter
 
+    quay:
+      uiUrl: https://quay.{{ .Values.cluster.subdomain }}
+
     proxy:
       endpoints:
         '/jira/api':
@@ -136,6 +139,12 @@ data:
             Content-Type: application/json
             X-Atlassian-Token: nocheck
           allowedMethods: ['GET', 'POST']
+        '/quay/api':
+          target: https://quay.{{ .Values.cluster.subdomain }}
+          headers:
+            X-Requested-With: XMLHttpRequest
+          changeOrigin: true
+          secure: false
 
     kubernetes:
       serviceLocatorMethod:
