@@ -297,7 +297,7 @@ data:
                     if:
                       allOf:
                         - isKind: component
-      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend:bs_1.42.5__2.14.0
+      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend:bs_1.42.5__2.14.0!red-hat-developer-hub-backstage-plugin-scorecard-backend
         disabled: false
 
       # Jira plugin (frontend overview card)
