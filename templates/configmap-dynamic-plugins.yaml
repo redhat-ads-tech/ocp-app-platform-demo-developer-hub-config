@@ -301,7 +301,7 @@ data:
         disabled: false
 
       # Jira plugin (frontend overview card)
-      - package: ./dynamic-plugins/dist/roadiehq-backstage-plugin-jira
+      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/roadiehq-backstage-plugin-jira:1.9
         disabled: false
         pluginConfig:
           dynamicPlugins:
