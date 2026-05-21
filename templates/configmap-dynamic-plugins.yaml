@@ -280,6 +280,64 @@ data:
         disabled: false
       - package: 'oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/backstage-community-plugin-sonarqube-backend:bs_1.45.3__0.15.0'
         disabled: false
+                  
+      # Scorecards plugin (frontend + backend)
+      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard:bs_1.42.5__1.0.0!red-hat-developer-hub-backstage-plugin-scorecard
+        disabled: false
+        pluginConfig:
+          dynamicPlugins:
+            frontend:
+              red-hat-developer-hub.backstage-plugin-scorecard:
+                mountPoints:
+                  - mountPoint: entity.page.overview/cards
+                    importName: EntityScorecardContent
+                    config:
+                      layout:
+                        gridColumnEnd: span 4
+                    if:
+                      allOf:
+                        - isKind: component
+      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend:bs_1.42.5__1.0.0!red-hat-developer-hub-backstage-plugin-scorecard-backend
+        disabled: false
+
+      # Jira plugin (frontend overview card)
+      - package: ./dynamic-plugins/dist/roadiehq-backstage-plugin-jira
+        disabled: false
+        pluginConfig:
+          dynamicPlugins:
+            frontend:
+              roadiehq.backstage-plugin-jira:
+                mountPoints:
+                  - mountPoint: entity.page.overview/cards
+                    importName: EntityJiraOverviewCard
+                    config:
+                      layout:
+                        gridColumn: 1 / -1
+
+      # Jira plugin (backend data source for Scorecards)
+      - package: oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira:bs_1.42.5__1.0.1!red-hat-developer-hub-backstage-plugin-scorecard-backend-module-jira
+        disabled: false
+
+      # Quay plugin
+      - package: ./dynamic-plugins/dist/backstage-community-plugin-quay
+        disabled: false
+        pluginConfig:
+          dynamicPlugins:
+            frontend:
+              backstage-community.plugin-quay:
+                mountPoints:
+                  - mountPoint: entity.page.image-registry/cards
+                    importName: QuayPage
+                    config:
+                      layout:
+                        gridColumn: 1 / -1
+                    if:
+                      allOf:
+                        - isKind: component
+                entityTabs:
+                  - path: /image-registry
+                    title: Image Registry
+                    mountPoint: entity.page.image-registry
 
       {{- if .Values.devMode }}
       # Dev-only plugins
