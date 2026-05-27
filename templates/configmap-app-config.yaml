@@ -28,7 +28,7 @@ data:
 
       mcpServers:
       - name: mcp::backstage
-        token: ${BACKEND_SECRET}
+        token: ${MCP_SECRET}
 
       # OPTIONAL: Port for lightspeed service (default: 8080)
       # servicePort: ${LIGHTSPEED_SERVICE_PORT}
@@ -97,6 +97,10 @@ data:
           - type: static
             options:
               token: ${BACKEND_SECRET}
+              subject: api-clients
+          - type: static
+            options:
+              token: ${MCP_SECRET}
               subject: mcp-clients
       # Lightspeed-specific CSP and script-src/img-src directives
       csp:
