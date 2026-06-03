@@ -145,8 +145,6 @@ data:
           target: https://github.com/redhat-ads-tech/orchestrator-self-service-templates/blob/main/namespace/template.yaml
           rules:
             - allow: [Template]
-          rules:
-            - allow: [Component, System, API, Resource, Location, Template, Domain, User, Group]
       providers:
         keycloakOrg:
           default:
