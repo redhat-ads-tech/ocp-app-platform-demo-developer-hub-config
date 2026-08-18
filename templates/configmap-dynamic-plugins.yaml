@@ -79,6 +79,10 @@ data:
         integrity: 'sha256:0c5b9ade408c824e957a683e808195177936c58928cd0ee25724079abff53cda'
         disabled: false
 
+      # Scaffolder relation processor (automated template lifecycle management)
+      - package: ./dynamic-plugins/dist/backstage-community-plugin-catalog-backend-module-scaffolder-relation-processor-dynamic
+        disabled: false
+
       # Lightspeed plugins
       - package: 'oci://ghcr.io/redhat-developer/rhdh-plugin-export-overlays/red-hat-developer-hub-backstage-plugin-lightspeed:bs_1.45.3__1.2.3'
         disabled: false
@@ -160,10 +164,10 @@ data:
                     importName: SupportButton
                     config:
                       priority: 80
-                  # - mountPoint: global.header/component
-                  #   importName: NotificationButton
-                  #   config:
-                  #     priority: 70
+                  - mountPoint: global.header/component
+                    importName: NotificationButton
+                    config:
+                      priority: 70
                   - mountPoint: global.header/component
                     importName: Divider
                     config:
