@@ -126,6 +126,14 @@ data:
       generator:
         runIn: local
 
+    scaffolder:
+      pullRequests:
+        templateUpdate:
+          enabled: true
+      notifications:
+        templateUpdate:
+          enabled: true
+
     integrations:
       gitlab:
         - apiBaseUrl: https://{{ .Values.gitlab.host }}/api/v4
